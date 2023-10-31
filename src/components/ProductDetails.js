@@ -2,17 +2,19 @@ import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 import { ProductContext } from '../contexts/ProductContext';
-
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import Manage from './Manage';
+import Sidebar from './Sidebar';
 const ProductDetails = () => {
    //recuper l'id du produit par l'url
    const { id } = useParams();
    const {products} = useContext(ProductContext);
    const { addToCart } = useContext(CartContext);
 
-   // get the single product based a partir de id
-   const product = products.find((item) => {
-    return item.id === parseInt(id);
-   });
+   // get the single product a partir de id
+
+    const product = products.find((item) => item._id === id);
    console.log(product);
    
   // if product is not found
@@ -25,6 +27,10 @@ const ProductDetails = () => {
    // destructure product
   const { title, price, description, image } = product;
   return (
+   <>
+        <Header />
+        <Manage />
+        <Sidebar />
          <section className='pt-32 pb-12 lg:py-32 h-screen flex items-center'>
             <div className='container mx-auto'>
                {/* image & text */}
@@ -40,11 +46,13 @@ const ProductDetails = () => {
                   {price} FCFA
                   </div>
                   <p className='mb-8'>{description}</p>
-                  <button onClick={() => addToCart(product, product.id)} className='bg-black py-4 px-8 text-white'>Add to cart</button>
+                  <button onClick={() => addToCart(product, product._id)} className='bg-black py-4 px-8 text-white'>Add to cart</button>
                 </div>
                </div>
             </div>
          </section>
+         <Footer />
+         </>
   );
 };
 

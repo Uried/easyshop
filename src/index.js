@@ -7,9 +7,12 @@ import ProductProvider from './contexts/ProductContext';
 //sidebar provider
 import SidebarProvider from './contexts/SidebarContext';
 import CartProvider from './contexts/CartContext';
+import ManageProvider from './contexts/ManageContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
+  <ManageProvider>
   <SidebarProvider>
   <CartProvider>
   <ProductProvider>
@@ -18,8 +21,8 @@ root.render(
     </React.StrictMode>
   </ProductProvider>
   </CartProvider>
-
   </SidebarProvider>
+  </ManageProvider>
   
 );
 

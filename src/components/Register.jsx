@@ -26,7 +26,7 @@ const Register = () => {
       <div className=" bg-gradient-to-r from-gray-100 via-slate-300 to-neutral-100">
       <div className="fixed w-full  ">
         <div className="h-[18px] w-[18px] ml-10 mt-5 px-3 py-3 rounded-full bg-orange-500">
-          <Link className="font-bold text-[22px] text-gray-500">P2P</Link>
+          <Link to="/" className="font-bold text-[22px] text-gray-500">P2P</Link>
         </div>
       </div>
 

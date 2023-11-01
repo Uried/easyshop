@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+   
+  ],
 }
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -14,5 +16,7 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-animate"),
+  ],
 }
